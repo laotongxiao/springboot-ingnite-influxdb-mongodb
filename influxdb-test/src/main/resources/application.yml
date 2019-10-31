@@ -1,0 +1,30 @@
+spring:
+  profiles:
+    active: dev
+  main:
+    banner-mode: "off"
+---
+# 开发环境配置
+spring:
+  profiles: dev
+  influx:
+    url: http://localhost:8086
+    password: root
+    user: root
+    database: testdb
+  demo:
+    person:
+      id: id123456
+
+logging:
+  level:
+    root: error
+    cn.recallcode.iot.mqtt.server: error
+---
+# 生产环境
+spring:
+  profiles: prod
+logging:
+  level:
+    root: warn
+    cn.recallcode.iot.mqtt.server: info

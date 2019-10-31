@@ -1,0 +1,33 @@
+spring:
+  profiles:
+    active: dev
+  main:
+    banner-mode: "off"
+---
+# 开发环境配置
+spring:
+  profiles: dev
+  demo:
+    person:
+      id: id123456
+    dog:
+      id: idDog123456
+    cat:
+      id: idCat123456
+      name: smallCat
+    tiger:
+      id: idTiger123456
+      name: smallTiger
+
+logging:
+  level:
+    root: error
+    cn.recallcode.iot.mqtt.server: error
+---
+# 生产环境
+spring:
+  profiles: prod
+logging:
+  level:
+    root: warn
+    cn.recallcode.iot.mqtt.server: info
